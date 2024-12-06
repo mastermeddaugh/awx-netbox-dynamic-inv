@@ -5,9 +5,28 @@ api_endpoint: https://jmio4459.cloud.netboxapp.com/
 token: "1a7c9aa32aa6073ccaa503e28c555d00a70515d8"
 validate_certs: false
 config_context: true
-compose:
- ansible_network_os: platform.slug
- ansible_connection: custom_fields.ansible_connection
-device_query_filters:
- - status: 'active'
- - tag: 'tower_inv'
+
+
+#Newly added
+interfaces: true
+group_names_raw: true
+group_by:
+ - device_roles
+ - platform
+ - device_types
+ - tenants
+ - sites
+ - racks
+ - tags
+query_filters: []
+device_query_filters: 
+ - has_primary_ip: 'true'
+flatten_custom_fields: true
+
+##OLD##
+# compose:
+#  ansible_network_os: platform.slug
+#  ansible_connection: custom_fields.ansible_connection
+# device_query_filters:
+#  - status: 'active'
+#  - tag: 'tower_inv'
