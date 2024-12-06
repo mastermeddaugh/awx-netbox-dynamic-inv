@@ -1,8 +1,8 @@
 ## Ansible Plugin file for dynamic inventory through netbox
 ---
 plugin: netbox.netbox.nb_inventory
-api_endpoint:
-# token: "{{ lookup('env','NETBOX_API_KEY') }}"
+api_endpoint: https://jmio4459.cloud.netboxapp.com/
+token: "1a7c9aa32aa6073ccaa503e28c555d00a70515d8"
 validate_certs: false
 config_context: true
 compose:
